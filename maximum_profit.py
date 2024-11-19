@@ -1,12 +1,5 @@
 import sys
 
-"""
-v: Represents the values of the items. This would correspond to the profit that could be gained from purchasing a particular house, which is calculated as price * forecasted increase / 100.
-w: Represents the weights of the items. This corresponds to the price of each house.
-n: Represents the total number of items (houses) available to choose from.
-W: Represents the maximum weight capacity (budget) you have available for investment.
-"""
-
 # Add Your functions here
 def max_profit(money, num_houses, prices, increase):
     # create a dynamic programming table where dp_table[i][w] stores the max profit
