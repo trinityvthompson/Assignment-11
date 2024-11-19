@@ -15,7 +15,6 @@ def max_profit(money, num_houses, prices, increase):
     # iterate over each house
     for i in range(1, num_houses + 1):
         for w in range(money + 1):
-            # If the house price is greater than the current budget, skip it
             if prices[i - 1] <= w:
                 # calculate the profit from selecting the house
                 profit = prices[i - 1] * (increase[i - 1] / 100)
@@ -63,7 +62,7 @@ def main():
 
 # Add your functions and call them to generate the result. 
     result = max_profit(money, num_houses, prices, increase)
-    print(result)
+    print(f"{result:.2f}")
 
     
 
