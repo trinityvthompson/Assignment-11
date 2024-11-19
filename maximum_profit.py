@@ -1,6 +1,9 @@
 import sys
 
-# Add Your functions here
+"""
+This function finds the maximum possible profit of purchasing a subset of the 
+listed houses inputted via houses.txt file using dynamic programming.
+"""
 def max_profit(money, num_houses, prices, increase):
     # create a dynamic programming table where dp_table[i][w] stores the max profit
     dp_table = [[0 for _ in range(money + 1)] for _ in range(num_houses + 1) ]
@@ -12,7 +15,8 @@ def max_profit(money, num_houses, prices, increase):
                 # calculate the profit from selecting the house
                 profit = prices[i - 1] * (increase[i - 1] / 100)
                 # either don't pick the house or pick it and add its profit
-                dp_table[i][w] = max(dp_table[i - 1][w], profit + dp_table[i - 1][w - prices[i - 1]])
+                dp_table[i][w] = max(dp_table[i - 1][w], 
+                                     profit + dp_table[i - 1][w - prices[i - 1]])
             else:
                 # if the house price exceeds the current budget, drop it
                 dp_table[i][w] = dp_table[i - 1][w]
@@ -31,19 +35,19 @@ def main():
     line = line.strip()
     num_houses = int(line)
 
-    # The third line is a list of house prices in million dollar which is a list of 
-    # \textit{integer numbers} (Consider that house prices can be an integer number in million dollar only).
+    # The third line is a list of house prices in million dollar which is a list of
+    # \textit{integer numbers}
     line = sys.stdin.readline()
     line = line.strip()
     prices = line.split(",")
-    for i in range(0, len(prices)):
+    for i, _ in enumerate(prices):
         prices[i] = int(prices[i])
 
     # read the number of vertices
     line = sys.stdin.readline()
     line = line.strip()
     increase = line.split(",")
-    for i in range(0, len(increase)):
+    for i, _ in enumerate(increase):
         increase[i] = float(increase[i])
 
 # Add your functions and call them to generate the result.
