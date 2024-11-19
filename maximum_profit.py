@@ -20,10 +20,9 @@ Dynamic Programming Implementation
 
 import sys
 
-"""
-This function finds the maximum possible profit of purchasing a subset of the listed houses
-using dynamic programming (based off of the knapsack example in class).
-"""
+
+# This function finds the maximum possible profit of purchasing a subset of the listed houses
+# using dynamic programming (based off of the knapsack example in class).
 def max_profit(money, num_houses, prices, increase):
     # create a dynamic programming table where dp_table[i][w] stores the max profit
     dp_table = [[0 for _ in range(money + 1)] for _ in range(num_houses + 1) ]
@@ -44,6 +43,10 @@ def max_profit(money, num_houses, prices, increase):
     # the maximum profit will be in the dp_table[num_houses][money]
     return dp_table[num_houses][money]
 
+"""
+Main function reads the houses.txt file and inputs the variables into the max_profit function.
+Then the result (maximum profit) is outputted.
+"""
 def main():
     # The first line is the amount of investment in million USD which is an integer number.
     line = sys.stdin.readline()
