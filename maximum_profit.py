@@ -63,8 +63,5 @@ def main():
 # Add your functions and call them to generate the result. 
     result = max_profit(money, num_houses, prices, increase)
     print(f"{result:.2f}")
-
-    
-
     
 main()
